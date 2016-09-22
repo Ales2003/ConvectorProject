@@ -3,7 +3,7 @@ package ru.mail.ales_2003.convector.gui;
 
 /**
  *
- * @author admin
+ * Model
  */
 public class ConvectorModel {
     
