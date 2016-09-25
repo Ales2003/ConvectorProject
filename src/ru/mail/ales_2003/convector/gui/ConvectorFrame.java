@@ -180,7 +180,7 @@ public class ConvectorFrame extends JFrame implements ActionListener
         if (ecd.isSave()) {
             // Получаем контакт из диалогового окна
             Convector cnv = ecd.getConvector();
-            if (cnv.getConvectorId() != null) {
+            if (((Long)cnv.getConvectorId()) != null) {
                 // Если ID у конвектора есть, то мы его обновляем
                 convectorManager.updateConvector(cnv);
             } else {
