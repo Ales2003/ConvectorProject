@@ -52,7 +52,7 @@ public class ConvectorModel extends AbstractTableModel
         // В зависимости от номера колонки возвращаем то или иное поле конвектора
         switch (col) {
             case 0:
-                return Long.toString(convector.getConvectorId());
+                return Long.valueOf(convector.getConvectorId());
             case 1:
                 return Integer.toString(convector.getLength());
             case 2:

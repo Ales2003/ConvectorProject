@@ -17,6 +17,12 @@ public class ConvectorSimpleDAO implements ConvectorDAO {
     
     private final List<Convector> convectors = new ArrayList<Convector>();
     
+    public ConvectorSimpleDAO() {
+        addConvector(new Convector(1000, 220, 75, 100, 150));
+        addConvector(new Convector(1250, 220, 75, 125, 200));
+        addConvector(new Convector(1500, 220, 75, 150, 250));
+    }
+    
     @Override
    // добавляем созданный без Id конвектор в метод add
     public Long addConvector(Convector convector) {
