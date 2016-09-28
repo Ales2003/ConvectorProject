@@ -145,7 +145,7 @@ public class ConvectorFrame extends JFrame implements ActionListener
         // если строка выделена - можно ее редактировать
         if (sr != -1) {
             // Получаем ID контакта
-            Long id = Long.parseLong(convectorTable.getModel().getValueAt(sr, 0).toString());
+            Long id = Long.valueOf(convectorTable.getModel().getValueAt(sr, 0).toString());
             // получаем данные контакта по его ID
             Convector cnv = convectorManager.getConvector(id);
             // Создаем диалог для ввода данных и передаем туда контакт
@@ -164,7 +164,7 @@ public class ConvectorFrame extends JFrame implements ActionListener
         int sr = convectorTable.getSelectedRow();
         if (sr != -1) {
             // Получаем ID контакта
-            Long id = Long.parseLong(convectorTable.getModel().getValueAt(sr, 0).toString());
+            Long id = Long.valueOf(convectorTable.getModel().getValueAt(sr, 0).toString());
             // Удаляем контакт
             convectorManager.deleteConvector(id);
             // перегружаем список контактов
@@ -180,7 +180,7 @@ public class ConvectorFrame extends JFrame implements ActionListener
         if (ecd.isSave()) {
             // Получаем контакт из диалогового окна
             Convector cnv = ecd.getConvector();
-            if (((Long)cnv.getConvectorId()) != null) {
+            if ((cnv.getConvectorId()) != null) {
                 // Если ID у конвектора есть, то мы его обновляем
                 convectorManager.updateConvector(cnv);
             } else {
