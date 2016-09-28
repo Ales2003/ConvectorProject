@@ -12,6 +12,7 @@ import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextPane;
 import javax.swing.SwingConstants;
 import ru.mail.ales_2003.convector.entity.Convector;
@@ -178,10 +179,61 @@ public class EditConvectorDialog extends JDialog implements ActionListener
     // Создаем конвектор из заполенных полей, который можно будет записать
    
     public Convector getConvector() {
-        Convector convector = new Convector (Integer.parseInt(txtLength.getText()),
-        Integer.parseInt(txtWidth.getText()), Integer.parseInt(txtDepth.getText()),
-        Integer.parseInt(txtPrice.getText()), Integer.parseInt(txtPower.getText()));
+        //Обрабвтываем возможные ошибки формата ввода
+        // Сразу присваиваем переменным  некорректные значениям, которые будут передаваться в 
+        //конструктор конвектора в случае возникновения ошибок
+        Integer length = -1;
+        Integer width = -1;
+        Integer depth = -1;
+        Integer price = -1;
+        Integer power = -1;
+        
+        try{
+        length = Integer.valueOf(txtLength.getText());
+        }
+        catch(NumberFormatException n){
+        JOptionPane.showMessageDialog(this, "Вы ввели длину в неправильном формате, пожалуста, исправьте");
+        }
+        try{
+        width = Integer.valueOf(txtWidth.getText());
+        }
+        catch(NumberFormatException n){
+        JOptionPane.showMessageDialog(this, "Вы ввели ширину в неправильном формате, пожалуста, исправьте");
+        }
+        try{
+        depth = Integer.valueOf(txtDepth.getText());
+        }
+        catch(NumberFormatException n){
+        JOptionPane.showMessageDialog(this, "Вы ввели глубину в неправильном формате, пожалуста, исправьте");
+        }
+        try{
+        price = Integer.valueOf(txtPrice.getText());
+        }
+        catch(NumberFormatException n){
+        JOptionPane.showMessageDialog(this, "Вы ввели цену в неправильном формате, пожалуста, исправьте");
+        }
+        try{
+        power = Integer.valueOf(txtPower.getText());
+        }
+        catch(NumberFormatException n){
+        JOptionPane.showMessageDialog(this, "Вы ввели цену в неправильном формате, пожалуста, исправьте");
+        }
+        
+              
+               
+        Convector convector = new Convector (convectorId, length, width, depth,
+        price, power);
         return convector;
-      
-    }
+        
+        // Если код  без исключений 
+        /*Convector convector = new Convector (convectorId, Integer.valueOf(txtLength.getText()),
+        Integer.valueOf(txtWidth.getText()), Integer.valueOf(txtDepth.getText()),
+        Integer.valueOf(txtPrice.getText()), Integer.valueOf(txtPower.getText()));
+        return convector;
+        */
+        }
+        
+        
+    
+    
 }
