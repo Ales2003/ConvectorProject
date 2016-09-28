@@ -10,17 +10,17 @@ package ru.mail.ales_2003.convector.entity;
 public class Convector //implements Comparable <Convector> 
     {
     // идентификатор конвектора
-    private long convectorId;
+    private Long convectorId;
     // длина
-    private int length;
+    private Integer length;
     // ширина
-    private int width;
+    private Integer width;
     // глубина
-    private int depth;
+    private Integer depth;
     // цена
-    private int price;
+    private Integer price;
     //мощность
-    private int power;
+    private Integer power;
      //мощность
     
     /*
@@ -34,7 +34,7 @@ public class Convector //implements Comparable <Convector>
     public Convector() {
     }
 
-    public Convector(long convectorId, int length, int width, int depth, int price, int power) {
+    public Convector(Long convectorId, Integer length, Integer width, Integer depth, Integer price, Integer power) {
         this.convectorId = convectorId;
         this.length = length;
         this.width = width;
@@ -43,7 +43,7 @@ public class Convector //implements Comparable <Convector>
         this.power = power;
     }
 
-    public Convector(int length, int width, int depth, int price, int power) {
+    public Convector(Integer length, Integer width, Integer depth, Integer price, Integer power) {
         this.length = length;
         this.width = width;
         this.depth = depth;
@@ -51,51 +51,51 @@ public class Convector //implements Comparable <Convector>
         this.power = power;
     }
 
-    public long getConvectorId() {
+    public Long getConvectorId() {
         return convectorId;
     }
 
-    public void setConvectorId(long convectorId) {
+    public void setConvectorId(Long convectorId) {
         this.convectorId = convectorId;
     }
 
-    public int getLength() {
+    public Integer getLength() {
         return length;
     }
 
-    public void setLength(int length) {
+    public void setLength(Integer length) {
         this.length = length;
     }
 
-    public int getWidth() {
+    public Integer getWidth() {
         return width;
     }
 
-    public void setWidth(int width) {
+    public void setWidth(Integer width) {
         this.width = width;
     }
 
-    public int getDepth() {
+    public Integer getDepth() {
         return depth;
     }
 
-    public void setDepth(int depth) {
+    public void setDepth(Integer depth) {
         this.depth = depth;
     }
 
-    public int getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(Integer price) {
         this.price = price;
     }
 
-    public int getPower() {
+    public Integer getPower() {
         return power;
     }
 
-    public void setPower(int power) {
+    public void setPower(Integer power) {
         this.power = power;
     }
 
