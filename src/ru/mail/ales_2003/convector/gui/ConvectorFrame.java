@@ -17,6 +17,7 @@ import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 import ru.mail.ales_2003.convector.business.ConvectorManager;
 import ru.mail.ales_2003.convector.entity.Convector;
+import ru.mail.ales_2003.convector.propertys.LanguageSelection;
 
 /**
  *
@@ -53,10 +54,10 @@ public class ConvectorFrame extends JFrame implements ActionListener
         // усанавливаем у него layout
         btnPanel.setLayout(gridbag);
         // Создаем кнопки и укзаываем их загловок и ActionCommand
-        btnPanel.add(createButton(gridbag, gbc, "Обновить", LOAD));
-        btnPanel.add(createButton(gridbag, gbc, "Добавить", ADD));
-        btnPanel.add(createButton(gridbag, gbc, "Исправить", EDIT));
-        btnPanel.add(createButton(gridbag, gbc, "Удалить", DELETE));
+        btnPanel.add(createButton(gridbag, gbc, LanguageSelection.loadGuiCfLoadButtonTitle(), LOAD));
+        btnPanel.add(createButton(gridbag, gbc, LanguageSelection.loadGuiCfAddButtonTitle(), ADD));
+        btnPanel.add(createButton(gridbag, gbc, LanguageSelection.loadGuiCfEditButtonTitle(), EDIT));
+        btnPanel.add(createButton(gridbag, gbc, LanguageSelection.loadGuiCfDeleteButtonTitle(), DELETE));
 
         // Создаем панель для левой колокни с кнопками
         JPanel left = new JPanel();
@@ -154,7 +155,7 @@ public class ConvectorFrame extends JFrame implements ActionListener
             saveConvector(ecd);
         } else {
             // Если строка не выделена - сообщаем об этом
-            JOptionPane.showMessageDialog(this, "Вы должны выделить строку для редактирования");
+            JOptionPane.showMessageDialog(this, LanguageSelection.loadGuiCfWrongEditMessage());
         }
     }
 
@@ -170,7 +171,7 @@ public class ConvectorFrame extends JFrame implements ActionListener
             // перегружаем список контактов
             loadConvector();
         } else {
-            JOptionPane.showMessageDialog(this, "Вы должны выделить строку для удаления");
+            JOptionPane.showMessageDialog(this, LanguageSelection.loadGuiCfWrongDeleteMessage());
         }
     }
 

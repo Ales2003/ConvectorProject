@@ -148,13 +148,13 @@ public class EditConvectorDialog extends JDialog implements ActionListener
 
     // Размещаем кнопки на форме
     private void buildButtons() {
-        JButton btnSave = new JButton("SAVE");
+        JButton btnSave = new JButton("СОХРАНИТЬ");
         btnSave.setActionCommand(SAVE);
         btnSave.addActionListener(this);
         btnSave.setBounds(new Rectangle(PAD, 6 * H_B + PAD, W_B, H_B));
         add(btnSave);
 
-        JButton btnCancel = new JButton("CANCEL");
+        JButton btnCancel = new JButton("ОТМЕНА");
         btnCancel.setActionCommand(CANCEL);
         btnCancel.addActionListener(this);
         btnCancel.setBounds(new Rectangle(W_B + 2 * PAD, 6 * H_B + PAD, W_B, H_B));
@@ -216,7 +216,7 @@ public class EditConvectorDialog extends JDialog implements ActionListener
         power = Integer.valueOf(txtPower.getText());
         }
         catch(NumberFormatException n){
-        JOptionPane.showMessageDialog(this, "Вы ввели цену в неправильном формате, пожалуста, исправьте");
+        JOptionPane.showMessageDialog(this, "Вы ввели мощность в неправильном формате, пожалуста, исправьте");
         }
         
               
