@@ -10,7 +10,7 @@ import java.util.PropertyResourceBundle;
  */
 public class LanguageAssistant {
     // Загружаем данные из ресурса, устанавливаем локаль вручную
-    public static PropertyResourceBundle pr = (PropertyResourceBundle) PropertyResourceBundle.getBundle("ru.mail.ales_2003.convector.language.languageSelection", new Locale("be_BY"));    
+    public static PropertyResourceBundle pr = (PropertyResourceBundle) PropertyResourceBundle.getBundle("ru.mail.ales_2003.convector.language.languageSelection", new Locale("ru_RU"));    
     
     //названия кнопок для класса ConvectorFrame
     public static String loadLoadButtonTitle () {
