@@ -1,0 +1,24 @@
+load.button.title=Узнавіць
+add.button.title=Дадаць
+edit.button.title=Выправіць
+delete.button.title=Выдаліць
+save.button.title=ЗАХАВАЦЬ
+cancel.button.title=АДМЕНА
+length.row.title=Даўжыня
+width.row.title=Шырыня
+depth.row.title=Глыбіня
+price.row.title=Кошт
+power.row.title=Моц
+length.label.title=Даўжыня:
+width.label.title=Шырыня:
+depth.label.title=Глыбіня:
+price.label.title=Кошт:
+power.label.title=Моц:
+incorrect.edit.message=Вы павінны вылучыць радок для рэдагавання
+incorrect.delete.message=Вы павінны вылучыць радок для выдалення
+incorrect.input.length.message=Вы ўвялі даўжыню ў няправільным фармаце, калі ласка, выпраўце
+incorrect.input.width.message=Вы ўвялі шырыню ў няправільным фармаце, калі ласка, выпраўце
+incorrect.input.depth.message=Вы ўвялі глыбіню ў няправільным фармаце, калі ласка, выпраўце
+incorrect.input.price.message=Вы ўвялі кошт ў няправільным фармаце, калі ласка, выпраўце
+incorrect.input.power.message=Вы ўвялі моц ў няправільным фармаце, калі ласка, выпраўце
+

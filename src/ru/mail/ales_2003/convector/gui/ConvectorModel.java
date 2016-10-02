@@ -6,6 +6,7 @@ import static java.lang.Long.valueOf;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 import ru.mail.ales_2003.convector.entity.Convector;
+import ru.mail.ales_2003.convector.language.LanguageAssistant;
 
 /**
  *
@@ -14,7 +15,9 @@ import ru.mail.ales_2003.convector.entity.Convector;
 public class ConvectorModel extends AbstractTableModel
 {
     // Список загловков для колонок в таблице
-    private static final String[] headers = {"ID", "Длина", "Ширина", "Глубина", "Цена", "Мощность"};
+    private static final String[] headers = {"ID", LanguageAssistant.loadLengthRowTitle(),
+        LanguageAssistant.loadWidthhRowTitle(), LanguageAssistant.loadDepthRowTitle(),
+        LanguageAssistant.loadPriceRowTitle(), LanguageAssistant.loadPowerRowTitle()};
     
     // Здесь мы храним список конвекторов, которые будем отображать в таблице
     private final List<Convector> convectors;

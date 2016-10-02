@@ -16,6 +16,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextPane;
 import javax.swing.SwingConstants;
 import ru.mail.ales_2003.convector.entity.Convector;
+import ru.mail.ales_2003.convector.language.LanguageAssistant;
 
 /**
  *
@@ -83,7 +84,7 @@ public class EditConvectorDialog extends JDialog implements ActionListener
     // Размещаем метки и поля ввода на форме
     private void buildFields() {
         // Набор метки и поля для Длины
-        JLabel lblLength = new JLabel("Длина:");
+        JLabel lblLength = new JLabel(LanguageAssistant.loadLengthLabelTitle());
         // Выравнивание текста с правой стороны
         lblLength.setHorizontalAlignment(SwingConstants.RIGHT);
         // Выставляем координаты метки
@@ -98,7 +99,7 @@ public class EditConvectorDialog extends JDialog implements ActionListener
         add(txtLength);
 
         // Набор метки и поля для Ширины
-        JLabel lblWidth = new JLabel("Ширина:");
+        JLabel lblWidth = new JLabel(LanguageAssistant.loadWidthhLabelTitle());
         lblWidth.setHorizontalAlignment(SwingConstants.RIGHT);
         lblWidth.setBounds(new Rectangle(PAD, 1 * H_B + PAD, W_L, H_B));
         add(lblWidth);
@@ -107,7 +108,7 @@ public class EditConvectorDialog extends JDialog implements ActionListener
         add(txtWidth);
 
         // Набор метки и поля для Глубины
-        JLabel lblDepth = new JLabel("Глубина:");
+        JLabel lblDepth = new JLabel(LanguageAssistant.loadDepthLabelTitle());
         lblDepth.setHorizontalAlignment(SwingConstants.RIGHT);
         lblDepth.setBounds(new Rectangle(PAD, 2 * H_B + PAD, W_L, H_B));
         add(lblDepth);
@@ -116,7 +117,7 @@ public class EditConvectorDialog extends JDialog implements ActionListener
         add(txtDepth);
 
         // Набор метки и поля для Цены
-        JLabel lblPrice = new JLabel("Цена:");
+        JLabel lblPrice = new JLabel(LanguageAssistant.loadPriceLabelTitle());
         lblPrice.setHorizontalAlignment(SwingConstants.RIGHT);
         lblPrice.setBounds(new Rectangle(PAD, 3 * H_B + PAD, W_L, H_B));
         add(lblPrice);
@@ -125,7 +126,7 @@ public class EditConvectorDialog extends JDialog implements ActionListener
         add(txtPrice);
         
         // Набор метки и поля для Мощности
-        JLabel lblPower = new JLabel("Мощность:");
+        JLabel lblPower = new JLabel(LanguageAssistant.loadPowerLabelTitle());
         lblPower.setHorizontalAlignment(SwingConstants.RIGHT);
         lblPower.setBounds(new Rectangle(PAD, 4 * H_B + PAD, W_L, H_B));
         add(lblPower);
@@ -148,13 +149,13 @@ public class EditConvectorDialog extends JDialog implements ActionListener
 
     // Размещаем кнопки на форме
     private void buildButtons() {
-        JButton btnSave = new JButton("СОХРАНИТЬ");
+        JButton btnSave = new JButton(LanguageAssistant.loadSaveButtonTitle());
         btnSave.setActionCommand(SAVE);
         btnSave.addActionListener(this);
         btnSave.setBounds(new Rectangle(PAD, 6 * H_B + PAD, W_B, H_B));
         add(btnSave);
 
-        JButton btnCancel = new JButton("ОТМЕНА");
+        JButton btnCancel = new JButton(LanguageAssistant.loadCancelButtonTitle());
         btnCancel.setActionCommand(CANCEL);
         btnCancel.addActionListener(this);
         btnCancel.setBounds(new Rectangle(W_B + 2 * PAD, 6 * H_B + PAD, W_B, H_B));
@@ -192,31 +193,31 @@ public class EditConvectorDialog extends JDialog implements ActionListener
         length = Integer.valueOf(txtLength.getText());
         }
         catch(NumberFormatException n){
-        JOptionPane.showMessageDialog(this, "Вы ввели длину в неправильном формате, пожалуста, исправьте");
+        JOptionPane.showMessageDialog(this, LanguageAssistant.loadIncorrectInputLengthMessage());
         }
         try{
         width = Integer.valueOf(txtWidth.getText());
         }
         catch(NumberFormatException n){
-        JOptionPane.showMessageDialog(this, "Вы ввели ширину в неправильном формате, пожалуста, исправьте");
+        JOptionPane.showMessageDialog(this, LanguageAssistant.loadIncorrectInputWidthMessage());
         }
         try{
         depth = Integer.valueOf(txtDepth.getText());
         }
         catch(NumberFormatException n){
-        JOptionPane.showMessageDialog(this, "Вы ввели глубину в неправильном формате, пожалуста, исправьте");
+        JOptionPane.showMessageDialog(this, LanguageAssistant.loadIncorrectInputDepthMessage());
         }
         try{
         price = Integer.valueOf(txtPrice.getText());
         }
         catch(NumberFormatException n){
-        JOptionPane.showMessageDialog(this, "Вы ввели цену в неправильном формате, пожалуста, исправьте");
+        JOptionPane.showMessageDialog(this, LanguageAssistant.loadIncorrectInputPriceMessage());
         }
         try{
         power = Integer.valueOf(txtPower.getText());
         }
         catch(NumberFormatException n){
-        JOptionPane.showMessageDialog(this, "Вы ввели мощность в неправильном формате, пожалуста, исправьте");
+        JOptionPane.showMessageDialog(this, LanguageAssistant.loadIncorrectInputPowerMessage());
         }
         
               

@@ -17,7 +17,7 @@ import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 import ru.mail.ales_2003.convector.business.ConvectorManager;
 import ru.mail.ales_2003.convector.entity.Convector;
-import ru.mail.ales_2003.convector.propertys.LanguageSelection;
+import ru.mail.ales_2003.convector.language.LanguageAssistant;
 
 /**
  *
@@ -54,10 +54,10 @@ public class ConvectorFrame extends JFrame implements ActionListener
         // усанавливаем у него layout
         btnPanel.setLayout(gridbag);
         // Создаем кнопки и укзаываем их загловок и ActionCommand
-        btnPanel.add(createButton(gridbag, gbc, LanguageSelection.loadGuiCfLoadButtonTitle(), LOAD));
-        btnPanel.add(createButton(gridbag, gbc, LanguageSelection.loadGuiCfAddButtonTitle(), ADD));
-        btnPanel.add(createButton(gridbag, gbc, LanguageSelection.loadGuiCfEditButtonTitle(), EDIT));
-        btnPanel.add(createButton(gridbag, gbc, LanguageSelection.loadGuiCfDeleteButtonTitle(), DELETE));
+        btnPanel.add(createButton(gridbag, gbc, LanguageAssistant.loadLoadButtonTitle(), LOAD));
+        btnPanel.add(createButton(gridbag, gbc, LanguageAssistant.loadAddButtonTitle(), ADD));
+        btnPanel.add(createButton(gridbag, gbc, LanguageAssistant.loadEditButtonTitle(), EDIT));
+        btnPanel.add(createButton(gridbag, gbc, LanguageAssistant.loadDeleteButtonTitle(), DELETE));
 
         // Создаем панель для левой колокни с кнопками
         JPanel left = new JPanel();
@@ -155,7 +155,7 @@ public class ConvectorFrame extends JFrame implements ActionListener
             saveConvector(ecd);
         } else {
             // Если строка не выделена - сообщаем об этом
-            JOptionPane.showMessageDialog(this, LanguageSelection.loadGuiCfWrongEditMessage());
+            JOptionPane.showMessageDialog(this, LanguageAssistant.loadIncorrectEditMessage());
         }
     }
 
@@ -171,7 +171,7 @@ public class ConvectorFrame extends JFrame implements ActionListener
             // перегружаем список контактов
             loadConvector();
         } else {
-            JOptionPane.showMessageDialog(this, LanguageSelection.loadGuiCfWrongDeleteMessage());
+            JOptionPane.showMessageDialog(this, LanguageAssistant.loadIncorrectDeleteMessage());
         }
     }
 

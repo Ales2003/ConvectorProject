@@ -1,0 +1,24 @@
+load.button.title=Обновить
+add.button.title=Добавить
+edit.button.title=Исправить
+delete.button.title=Удалить
+save.button.title=СОХРАНИТЬ
+cancel.button.title=ОТМЕНА
+length.row.title=Длина
+width.row.title=Ширина
+depth.row.title=Глубина
+price.row.title=Цена
+power.row.title=Мощность
+length.label.title=Длина:
+width.label.title=Ширина:
+depth.label.title=Глубина:
+price.label.title=Цена:
+power.label.title=Мощноcть:
+incorrect.edit.message=Вы должны выделить строку для редактирования
+incorrect.delete.message=Вы должны выделить строку для удаления
+incorrect.input.length.message=Вы ввели длину в неправильном формате, пожалуста, исправьте
+incorrect.input.width.message=Вы ввели ширину в неправильном формате, пожалуста, исправьте
+incorrect.input.depth.message=Вы ввели глубину в неправильном формате, пожалуста, исправьте
+incorrect.input.price.message=Вы ввели цену в неправильном формате, пожалуста, исправьте
+incorrect.input.power.message=Вы ввели мощность в неправильном формате, пожалуста, исправьте
+
