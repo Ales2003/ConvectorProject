@@ -89,6 +89,7 @@ public class ConvectorDBDao implements ConvectorDAO {
             stmt.setInt(3, convector.getDepth());
             stmt.setInt(4, convector.getPrice());
             stmt.setInt(5, convector.getPower());
+            stmt.setLong(5, convector.getConvectorId());
             stmt.execute();
         } finally {
             if (stmt != null) {
