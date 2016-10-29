@@ -29,7 +29,10 @@ public class ConvectorFrame extends JFrame implements ActionListener
     private static final String EDIT = "EDIT";
     private static final String DELETE = "DELETE";
 
-    private final ConvectorManager convectorManager = new ConvectorManager();
+    
+    private final ConvectorManager convectorManager = new ConvectorManager ();
+   
+    
     private final JTable convectorTable = new JTable();
 
     // В конструкторе мы создаем нужные элементы
@@ -185,7 +188,7 @@ public class ConvectorFrame extends JFrame implements ActionListener
                 convectorManager.updateConvector(cnv);
             } else {
                 // Если у конвектора нет ID - значит он новый и мы его добавляем
-                convectorManager.addConvector(cnv);
+                Long id = convectorManager.addConvector(cnv);
             }
             loadConvector();
         }

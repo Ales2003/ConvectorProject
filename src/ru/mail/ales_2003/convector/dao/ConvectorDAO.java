@@ -11,15 +11,15 @@ import ru.mail.ales_2003.convector.entity.Convector;
 //Интерфейс для определения функций хранения данных о конвекторах
 
 public interface ConvectorDAO {
-    // Добавление контакта - возвращает ID добавленного контакта
+    // Добавление конвектора - возвращает ID добавленного конвектора
     public Long addConvector(Convector convector);
-    // Редактирование контакта
+    // Редактирование конвектора
     public void updateConvector(Convector convector);
-    // Удаление контакта по его ID
+    // Удаление конвектора по его ID
     public void deleteConvector(Long convectorId);
-    // Получение контакта
+    // Получение конвектора
     public Convector getConvector(Long convectorId);
-    // Получение списка контактов
+    // Получение списка конвекторов
     public List<Convector> findConvectors();
     
 }

@@ -1,6 +1,9 @@
 
 package ru.mail.ales_2003.convector.entity;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /**
  *
  * @author admin
@@ -51,6 +54,16 @@ public class Convector //implements Comparable <Convector>
         this.power = power;
     }
 
+    public Convector(ResultSet rs) throws SQLException {
+        setConvectorId(rs.getLong(1));
+        setLength(rs.getInt(2));
+        setWidth(rs.getInt(3));
+        setDepth(rs.getInt(4));
+        setPrice(rs.getInt(5));
+        setPower(rs.getInt(6));
+    }
+    
+    
     public Long getConvectorId() {
         return convectorId;
     }

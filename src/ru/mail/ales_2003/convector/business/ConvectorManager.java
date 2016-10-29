@@ -2,6 +2,8 @@
 package ru.mail.ales_2003.convector.business;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import ru.mail.ales_2003.convector.dao.ConvectorDAO;
 import ru.mail.ales_2003.convector.dao.ConvectorDAOFactory;
 import ru.mail.ales_2003.convector.entity.Convector;
@@ -16,8 +18,12 @@ import ru.mail.ales_2003.convector.entity.Convector;
 public class ConvectorManager {
      private ConvectorDAO dao;
     
-    public ConvectorManager() {
-        dao = ConvectorDAOFactory.getConvectorDAO();
+    public ConvectorManager()  {
+         try {
+             dao = ConvectorDAOFactory.getConvectorDAO();
+         } catch (Exception ex) {
+             Logger.getLogger(ConvectorManager.class.getName()).log(Level.SEVERE, null, ex);
+         }
     }
     
     // Добавление конвектора - возвращает ID добавленного конвектора

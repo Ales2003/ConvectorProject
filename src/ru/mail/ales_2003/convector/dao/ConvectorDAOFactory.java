@@ -9,7 +9,8 @@ package ru.mail.ales_2003.convector.dao;
 
 public class ConvectorDAOFactory {
        
-    public static ConvectorDAO getConvectorDAO() {
+    public static ConvectorDAO getConvectorDAO() throws Exception {
         return new ConvectorSimpleDAO();
+        //return new ConvectorDBDao();
     }
 }
