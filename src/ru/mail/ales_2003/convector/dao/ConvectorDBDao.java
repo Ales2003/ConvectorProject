@@ -20,9 +20,7 @@ import ru.mail.ales_2003.convector.entity.Convector;
  * @author admin
  */
 public class ConvectorDBDao implements ConvectorDAO {
-    private final List<Convector> convectors = new ArrayList<Convector>();
-    
-    
+          
     public Connection con;
 
     public ConvectorDBDao () throws Exception {
@@ -31,14 +29,12 @@ public class ConvectorDBDao implements ConvectorDAO {
             String url = "jdbc:mysql://localhost:3306/convectordb";
             String login = "root";
             String password = "root";
-            Connection con = DriverManager.getConnection(url, login, password);
+            con = DriverManager.getConnection(url, login, password);
         } catch (ClassNotFoundException e) {
             throw new Exception(e);
         } catch (SQLException e) {
             throw new Exception(e);
         }
-        
-        
     }
         
     @Override
@@ -76,7 +72,10 @@ public class ConvectorDBDao implements ConvectorDAO {
     
     @Override
     public void updateConvector(Convector convector) {
-        try {
+       
+         
+         
+         try {
             PreparedStatement stmt = null;
             try {
             stmt = con.prepareStatement(
@@ -89,13 +88,13 @@ public class ConvectorDBDao implements ConvectorDAO {
             stmt.setInt(3, convector.getDepth());
             stmt.setInt(4, convector.getPrice());
             stmt.setInt(5, convector.getPower());
-            stmt.setLong(5, convector.getConvectorId());
+            stmt.setLong(6, convector.getConvectorId());
             stmt.execute();
-        } finally {
-            if (stmt != null) {
-                stmt.close();
+            } finally {
+                if (stmt != null) {
+                    stmt.close();
+                }
             }
-        }
             
         } catch (SQLException sQLException) {
         }
@@ -129,7 +128,7 @@ public class ConvectorDBDao implements ConvectorDAO {
             PreparedStatement stmt = null;
             try {
             stmt = con.prepareStatement(
-                    "SELECT FROM convectors " +
+                    "SELECT * FROM convectors " +
                     "WHERE conv_id=?");
             stmt.setLong(1, convectorId);
             rs = stmt.executeQuery();
@@ -150,7 +149,7 @@ public class ConvectorDBDao implements ConvectorDAO {
 
     @Override
     public List<Convector> findConvectors() {
-        
+        List<Convector> convectors = new ArrayList<Convector>();
         Convector convector = null;
         ResultSet rs = null;
         try {
@@ -172,13 +171,8 @@ public class ConvectorDBDao implements ConvectorDAO {
                  }
             }
             
-        } catch (Exception e) {
-        }
-        
-        
-        
+            } catch (Exception e) {
+            }
         return convectors;
-        
     }
-    
 }
